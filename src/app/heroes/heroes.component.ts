@@ -4,24 +4,21 @@ import { FormsModule } from '@angular/forms';
 
 import { HEROES } from '../mock-heroes';
 import { Hero } from '../hero';
+import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 
 @Component({
   selector: 'app-heroes',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, HeroDetailComponent],
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent {
 
-  isHeroSelected: boolean = false;
-  isSelected?: Hero;
+  selectedHero?: Hero;
 
   onSelect(selectedHero: Hero): void {
-    //this.isSelected = selectedHero;
-
-    this.isHeroSelected = !this.isHeroSelected;
-    selectedHero.hide = !selectedHero.hide;
+    this.selectedHero = selectedHero;
   }
 
   heroes: Hero[] = HEROES;

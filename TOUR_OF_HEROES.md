@@ -14,3 +14,9 @@
     use *ngFor to display a list
     use *ngIf to conditionally include or exclude a block of HTML.
     toggle a CSS style class with a class binding.
+
+# Part 3
+
+    created a separate, reusable HeroDetailComponent.
+    used a property binding to give the parent HeroesComponent control over the child HeroDetailComponent
+    used the @Input decorator to make the hero property available for binding by the external HeroesComponent
