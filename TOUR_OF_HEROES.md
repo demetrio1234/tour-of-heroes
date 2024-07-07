@@ -6,3 +6,11 @@
     used two-way data binding with the ngModel directive.
     imported the FormsModule so that Angular would recognize and apply the ngModel directive by the HeroesComponent
     learned the importance of declaring components in the AppModule
+
+# Part 2
+
+    display a selection list
+    the user can select a hero and see that hero's details
+    use *ngFor to display a list
+    use *ngIf to conditionally include or exclude a block of HTML.
+    toggle a CSS style class with a class binding.
