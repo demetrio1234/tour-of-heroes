@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+import { HEROES } from '../mock-heroes';
 import { Hero } from '../hero';
 
 @Component({
@@ -13,8 +14,15 @@ import { Hero } from '../hero';
 })
 export class HeroesComponent {
 
-  hero: Hero = {
-    id: 1,
-    name: 'Supaman'
-  };
+  isHeroSelected: boolean = false;
+  isSelected?: Hero;
+
+  onSelect(selectedHero: Hero): void {
+    //this.isSelected = selectedHero;
+
+    this.isHeroSelected = !this.isHeroSelected;
+    selectedHero.hide = !selectedHero.hide;
+  }
+
+  heroes: Hero[] = HEROES;
 }
