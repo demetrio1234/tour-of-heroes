@@ -33,3 +33,46 @@
     6. The component's ngOnInit lifecycle hook calls the HeroService method, not the constructor.
     7. created a MessageService for loosely coupled communication between classes.
     8. The HeroService injected into a component is created with another injected service, MessageService
+
+## Part 5
+
+    Requirements: 
+
+        1. Add a Dashboard view
+        2. Add the ability to navigate between the Heroes and Dashboard views
+        3. When users click a hero name in either view, navigate to a detail view of the selected hero
+        4. When users click a deep link in an email, open the detail view for a particular hero
+
+    Implementations for standalone version of the app:
+
+        1. ng generate module app-routing --flat
+        2. remove the generated file
+        3. in the app.routes.ts:
+
+            ``` app.routes.ts
+
+                import { Routes } from '@angular/routes' 
+                import { YourComponent } from 
+                
+                export const routes: Routes = [ { path: 'heroes', component: HeroesComponent } ];
+            ```
+        4. in the app.config.ts:
+
+            ```app.config.ts
+
+                import { provideRouter }
+                import { routes }
+
+                export const appConfig: ApplicationConfig = { providers : { provideRouted(routes) }
+                }
+            ```
+        5. in main.ts
+
+            ```main.ts
+
+                import { appConfig }
+                import { AppComponent }
+
+                bootstrapApplication(AppComponent, appConfig).catch((err) => console.log(err));
+
+            ```
