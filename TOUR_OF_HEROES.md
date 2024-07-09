@@ -76,3 +76,13 @@
                 bootstrapApplication(AppComponent, appConfig).catch((err) => console.log(err));
 
             ```
+
+        Implementation through the angular toh tutorial part 5:
+
+            added the Angular router to navigate among different components
+            turned the AppComponent into a navigation shell with <a> links and a <router-outlet>
+            defined routes, a redirect route, and a parameterized route
+            used the routerLink directive in anchor elements
+            refactored a tightly coupled main/detail view into a routed detail view
+            used router link parameters to navigate to the detail view of a user-selected hero
+            shared the HeroService with other components
